@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import '../../styles/dashboard.scss'
 
-class SectionControl extends Component {
-
-    render(){
+const SectionControl =(props) => {
         return(
             <div className="control-section">
                 <div className="control-section-text">
-                    <h1>{this.props.sectionName}</h1>
-                    <span className="control-section-text__books-num">{this.props.numOfbook}</span>
+                    <h1>{props.sectionName}</h1>
+                    <span className="control-section-text__books-num">{props.numOfbook}</span>
                 </div>
                 <div className="control-section-action">
-                    <button>next</button>
-                    <button>back</button>
+                    <div className="control-section-action__back"></div>
+                    <div className="control-section-action__next"></div>
                 </div>
             </div>
         )
-    }
 }
 
 SectionControl.propTypes = {

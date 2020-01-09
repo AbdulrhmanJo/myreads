@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import Dashboard from './dashboard/Dashboard'
+import * as BooksAPI from '../utils/BooksAPI'
 
 import '../styles/content.scss'
 
@@ -13,7 +14,18 @@ class Content extends Component {
             books:[],
         }
     }
-    render(){
+
+    componentDidMount(){
+        BooksAPI.getAll()
+        .then((books) => {
+            console.log(books);
+            this.setState({
+                books:[...books],
+            })
+        })        
+    }
+
+    render(){        
         return(
             <div className="content">
             <Route  exact path='/' render ={() => (
@@ -21,7 +33,7 @@ class Content extends Component {
             )} />
 
             <Route  path='/Dashboard' component={() => (
-                <Dashboard/>
+                <Dashboard books={this.state.books}/>
             )} />
             <Route  path='/Search' render ={() => {
                 return(

@@ -8,10 +8,15 @@ import Read from './read';
 import '../../styles/dashboard.scss'
 
 class Dashboard extends Component {
+
+    currentlyReadingBooks = () => {
+        return this.props.books.filter((book) => (book.shelf === "wantToRead"))
+    }
+
     render(){
         return (
             <div className="db-container">
-                <CurrentlyReading />
+                <CurrentlyReading books={this.props.books}/>
                 <WantToRead />
                 <Read />
             </div>
