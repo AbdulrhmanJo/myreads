@@ -1,0 +1,68 @@
+@import "./colors.scss";
+
+.nav-container {
+  height: 100%;
+  width: 33rem;
+  //   position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  // background-color: $lightColor;
+  font-size: 1.5rem;
+
+  .heading {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+    span {
+      color: grey;
+    }
+  }
+
+  .sidenav {
+    width: 22rem;
+    padding-left: 5rem;
+
+    &-section {
+      margin-bottom: 4rem;
+    }
+
+    p {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    &-item {
+      text-decoration: none;
+      display: flex;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+      &-img {
+        width: 1.3rem;
+      }
+      span {
+        padding: 6px 8px 6px 15px;
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
+    }
+  }
+  .sidenav-item:hover:not(.sidenav-item__active) {
+    background-color: grey;
+    border-radius: 0.5rem;
+    // transform: scale(1.07);
+  }
+  .sidenav-item:active {
+    transform: scale(1.04);
+  }
+
+  .sidenav-item__active {
+    background-color: $backgroundColor;
+    border-radius: 0.5rem;
+  }
+}
