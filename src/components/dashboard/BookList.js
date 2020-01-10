@@ -27,7 +27,7 @@ class BookList extends Component {
             <div className="swiper-wrapper">
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
-                        <CurrenltyReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail}/>
+                        <CurrenltyReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
                     </div>
                 ))}
             </div>
