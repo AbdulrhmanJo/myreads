@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import '../../styles/dashboard.scss'
 import Swiper from 'swiper/js/swiper.esm.bundle';
+import CurrenltyReadingCard from './currentlyReadingCard';
 
 
 class BookList extends Component {
 
     componentDidMount() {
-        const self = this;
         const swiper = new Swiper('.swiper-container', 
             {
                 slidesPerView: 4,
-                spaceBetween: 10,
+                spaceBetween: 20,
+                slidesPerView: 'auto',
+
+                navigation: {
+                    nextEl: '.control-section-action__next',
+                    prevEl: '.control-section-action__back',
+                  },
             });
       }
 
@@ -21,7 +27,7 @@ class BookList extends Component {
             <div className="swiper-wrapper">
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
-                        <img src={book.imageLinks.smallThumbnail} alt={book.title} style={{borderRadius: '.4rem'}}></img>
+                        <CurrenltyReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail}/>
                     </div>
                 ))}
             </div>
