@@ -4,6 +4,7 @@ import Swiper from 'swiper/js/swiper.esm.bundle';
 import BookCard from './bookCard';
 
 
+
 class BookList extends Component {
 
     componentDidMount() {
@@ -30,8 +31,8 @@ class BookList extends Component {
             <div className="swiper-wrapper">
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
-                        <div className="bookCard-container">
-                        <BookCard handleBookChange={this.handleBookChange} id={book.id} bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
+                        <div key={book.id} className="bookCard-container">
+                            <BookCard handleBookChange={this.handleBookChange} id={book.id} bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating} shelf={this.props.sectionName}/>
                         </div>
                     </div>
                 ))

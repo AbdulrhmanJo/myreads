@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
-import Dashboard from './Home/Dashboard'
-import * as BooksAPI from '../utils/BooksAPI'
+import Dashboard from './Home/Dashboard';
+import * as BooksAPI from '../utils/BooksAPI';
+import HomeLoader from './Home/homeLoader';
 
 import '../styles/content.scss'
 
@@ -12,6 +13,7 @@ class Content extends Component {
         super(props);
         this.state = {
             books:[],
+            hasContent:false,
         }
     }
 
@@ -25,17 +27,13 @@ class Content extends Component {
             console.log(books);
             this.setState({
                 books:[...books],
+                hasContent:true,
             })
         }) 
     }
     getBook = async (bookId) => {
        const response = await BooksAPI.get(bookId);
        return response;
-    }
-
-    convertMultiArrayToOneArray = (multiArray) => {
-        const { currentlyReading, wantToRead, read } = multiArray;
-        return [...currentlyReading];
     }
 
      updateBookShelf = async (shelf , bookId) => {
@@ -56,7 +54,14 @@ class Content extends Component {
             )} />
 
             <Route  path='/Dashboard' component={() => (
-                <Dashboard books={this.state.books} updateBookShelf={this.updateBookShelf}/>
+                <div>
+                    {this.state.hasContent ? (
+                        <Dashboard books={this.state.books} updateBookShelf={this.updateBookShelf}/>
+                    ):(
+                        <HomeLoader />
+                    )}
+               
+                </div>
             )} />
 
             <Route  path='/Search' render ={() => {

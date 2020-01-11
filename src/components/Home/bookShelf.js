@@ -27,7 +27,7 @@ class BookShelf extends Component {
         return(
             <div className={`${this.shelfName('')}-container`}>
                 <SectionControl shelf={this.shelfName('')} sectionName={this.props.name} numOfbook={this.props.books.length}/>
-                <BookList handleChangeBookShelf={this.handleChangeBookShelf} shelf={this.shelfName('')} books={this.props.books}/>
+                <BookList handleChangeBookShelf={this.handleChangeBookShelf} shelf={this.shelfName('')} sectionName={this.props.name} books={this.props.books}/>
             </div>
         )
     }

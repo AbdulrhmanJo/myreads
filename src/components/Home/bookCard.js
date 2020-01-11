@@ -8,6 +8,15 @@ class BookCard extends Component {
 
     handleButtonChoice = (choice) => {
         this.props.handleBookChange(choice, this.props.id);
+        const cards = document.querySelectorAll(".bookCard-container");
+        console.log(cards);
+        
+        for (let card of cards) {
+            if(card.textContent.includes(this.props.bookName) && card.textContent.includes(this.props.bookAuthor[0])){
+                card.style.opacity = "0.3";
+            }          
+        }
+    
     }
 
     render(){
@@ -23,7 +32,7 @@ class BookCard extends Component {
                     ))}
                     </div>
                     <Rater className="card-info__rating" total={5} rating={this.props.avgRate} interactive={false}/>
-                    <Button handleButtonChoice={this.handleButtonChoice}/>
+                    <Button shelf={this.props.shelf} handleButtonChoice={this.handleButtonChoice}/>
                 </div>
             </div>
         )

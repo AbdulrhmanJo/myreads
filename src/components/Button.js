@@ -4,9 +4,6 @@ import '../styles/dashboard.scss';
 
 
 class Button extends Component {
-    state = {
-        choice: 'Currently reading'
-    }
 
     handleButtonClick = (event) =>{
         const button = event.target; 
@@ -14,10 +11,9 @@ class Button extends Component {
     }
 
     handleChoice = (event) => {
-        this.props.handleButtonChoice(event.target.innerText);
-        this.setState({            
-            choice: event.target.innerText,
-        })
+        if(event.target.innerText !== this.props.shelf){
+            this.props.handleButtonChoice(event.target.innerText);
+        }
     }
 
     handleDropDownMenue = () => {
@@ -43,7 +39,7 @@ class Button extends Component {
     render(){
         return(
             <div className="dropdown">
-                <button className="dropdown-button" onClick={this.handleButtonClick}>{this.state.choice}</button>
+                <button className="dropdown-button" onClick={this.handleButtonClick}>{this.props.shelf}</button>
                 <div className="dropdown-choices">
                     <a onClick={this.handleChoice} name="Currently reading" >Currently reading</a>
                     <a onClick={this.handleChoice} name="Want to read" >Want to read</a>
