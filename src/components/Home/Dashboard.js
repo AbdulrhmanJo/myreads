@@ -16,13 +16,16 @@ class Dashboard extends Component {
             book.shelf === "wantToRead"
         ))
     }
+    ChangeBookShelf = (shelf,bookId) => {
+        this.props.updateBookShelf(shelf,bookId)
+    }
 
     render(){
         return (
             <div className="db-container">
-                <BookShelf name='Currently reading' books={this.currentlyReadingBooks()} updateBookShelf={this.props.updateBookShelf}/>
-                <BookShelf name='Want to read' books={this.wantToReadBooks()} updateBookShelf={this.props.updateBookShelf}/>
-                <BookShelf name='read' books={this.readBooks()} updateBookShelf={this.props.updateBookShelf}/>
+                <BookShelf name='Currently reading' books={this.currentlyReadingBooks()} ChangeBookShelf={this.ChangeBookShelf}/>
+                <BookShelf name='Want to read' books={this.wantToReadBooks()} ChangeBookShelf={this.ChangeBookShelf}/>
+                <BookShelf name='read' books={this.readBooks()} ChangeBookShelf={this.ChangeBookShelf}/>
             </div>
             
         )

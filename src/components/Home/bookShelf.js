@@ -5,8 +5,8 @@ import SectionControl from './sectionControl';
 import BookList from './BookList'
 
 class BookShelf extends Component {
-    shelfName = () => {
-        const shelfName  = this.props.name;
+    shelfName = (choice) => {
+        const shelfName  = choice === '' ? this.props.name : choice;
         console.log(shelfName);
         
         if(shelfName === 'Currently reading'){
@@ -18,11 +18,16 @@ class BookShelf extends Component {
         }
     }
 
+    handleChangeBookShelf = (choice,bookId) =>{
+        const shelf = this.shelfName(choice);
+        this.props.ChangeBookShelf(shelf,bookId);
+    }
+
     render(){
         return(
-            <div className={`${this.shelfName()}-container`}>
-                <SectionControl shelf={this.shelfName()} sectionName={this.props.name} numOfbook={this.props.books.length}/>
-                <BookList shelf={this.shelfName()} books={this.props.books}/>
+            <div className={`${this.shelfName('')}-container`}>
+                <SectionControl shelf={this.shelfName('')} sectionName={this.props.name} numOfbook={this.props.books.length}/>
+                <BookList handleChangeBookShelf={this.handleChangeBookShelf} shelf={this.shelfName('')} books={this.props.books}/>
             </div>
         )
     }

@@ -6,6 +6,10 @@ import Button from '../Button'
 
 class BookCard extends Component {
 
+    handleButtonChoice = (choice) => {
+        this.props.handleBookChange(choice, this.props.id);
+    }
+
     render(){
         return(
             <div className="card-container">
@@ -19,7 +23,7 @@ class BookCard extends Component {
                     ))}
                     </div>
                     <Rater className="card-info__rating" total={5} rating={this.props.avgRate} interactive={false}/>
-                    <Button />
+                    <Button handleButtonChoice={this.handleButtonChoice}/>
                 </div>
             </div>
         )

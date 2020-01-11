@@ -16,19 +16,35 @@ class Content extends Component {
     }
 
     componentDidMount(){
+       this.getAllBooks()   
+    }
+
+    getAllBooks = () => {
         BooksAPI.getAll()
         .then((books) => {
             console.log(books);
             this.setState({
                 books:[...books],
             })
-        })        
+        }) 
+    }
+    getBook = async (bookId) => {
+       const response = await BooksAPI.get(bookId);
+       return response;
     }
 
-    updateBookShelf = (book , shelf) => {
+    convertMultiArrayToOneArray = (multiArray) => {
+        const { currentlyReading, wantToRead, read } = multiArray;
+        return [...currentlyReading];
+    }
+
+     updateBookShelf = async (shelf , bookId) => {
+        const book = await this.getBook(bookId);
+        console.log(book);
+        
         BooksAPI.update(book, shelf)
-        .then((data) => {
-            console.log(data);
+        .then(() => {
+            this.getAllBooks();
         })
     }
 
@@ -40,7 +56,7 @@ class Content extends Component {
             )} />
 
             <Route  path='/Dashboard' component={() => (
-                <Dashboard books={this.state.books}/>
+                <Dashboard books={this.state.books} updateBookShelf={this.updateBookShelf}/>
             )} />
 
             <Route  path='/Search' render ={() => {

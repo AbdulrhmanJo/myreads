@@ -14,6 +14,7 @@ class Button extends Component {
     }
 
     handleChoice = (event) => {
+        this.props.handleButtonChoice(event.target.innerText);
         this.setState({            
             choice: event.target.innerText,
         })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Swiper from 'swiper/js/swiper.esm.bundle';
-import HomeReadingCard from './homeReadingCard';
+import BookCard from './bookCard';
 
 
 class BookList extends Component {
@@ -20,13 +20,19 @@ class BookList extends Component {
             });
     }
 
+    handleBookChange = (choice, bookID) => {
+        this.props.handleChangeBookShelf(choice, bookID);
+    }
+
     render(){
         return (
             <div className={`${this.props.shelf}-swiper-container`}>
             <div className="swiper-wrapper">
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
-                        <HomeReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
+                        <div className="bookCard-container">
+                        <BookCard handleBookChange={this.handleBookChange} id={book.id} bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
+                        </div>
                     </div>
                 ))
                 }
