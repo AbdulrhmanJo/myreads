@@ -10,8 +10,8 @@ const SectionControl =(props) => {
                     <span className="control-section-text__books-num">{props.numOfbook}</span>
                 </div>
                 <div className="control-section-action">
-                    <div className="control-section-action__back"></div>
-                    <div className="control-section-action__next"></div>
+                    <div className={`control-section-action__back--${props.shelf}`}></div>
+                    <div className={`control-section-action__next--${props.shelf}`}></div>
                 </div>
             </div>
         )

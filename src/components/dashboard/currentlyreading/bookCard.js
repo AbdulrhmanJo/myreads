@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import '../../styles/dashboard.scss'
-import Rater from 'react-rater'
+import PropTypes from 'prop-types';
+import '../../../styles/dashboard.scss';
+import Rater from 'react-rater';
+import Button from '../../Button'
 
-class CurrentlyReadingCard extends Component {
+class BookCard extends Component {
 
     render(){
         return(
@@ -18,11 +19,11 @@ class CurrentlyReadingCard extends Component {
                     ))}
                     </div>
                     <Rater className="card-info__rating" total={5} rating={this.props.avgRate} interactive={false}/>
-                    <button className="card-info__button">Currently Reading</button>
+                    <Button />
                 </div>
             </div>
         )
     }
 }
 
-export default CurrentlyReadingCard;
+export default BookCard;

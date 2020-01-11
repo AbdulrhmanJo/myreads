@@ -2,12 +2,13 @@
 
 .nav-container {
   height: 100%;
-  width: 33rem;
-  //   position: fixed;
+  width: 27rem;
+  position: fixed;
   z-index: 1;
   overflow-x: hidden;
-  // background-color: $lightColor;
+  background-color: white;
   font-size: 1.5rem;
+  z-index: 100;
 
   .heading {
     font-size: 3.5rem;
@@ -62,7 +63,7 @@
   }
 
   .sidenav-item__active {
-    background-color: $backgroundColor;
+    background-color: #e9defa94;
     border-radius: 0.5rem;
   }
 }
