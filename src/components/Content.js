@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
-import Dashboard from './dashboard/Dashboard'
+import Dashboard from './Home/Dashboard'
 import * as BooksAPI from '../utils/BooksAPI'
 
 import '../styles/content.scss'
@@ -25,6 +25,13 @@ class Content extends Component {
         })        
     }
 
+    updateBookShelf = (book , shelf) => {
+        BooksAPI.update(book, shelf)
+        .then((data) => {
+            console.log(data);
+        })
+    }
+
     render(){        
         return(
             <div className="content">
@@ -35,6 +42,7 @@ class Content extends Component {
             <Route  path='/Dashboard' component={() => (
                 <Dashboard books={this.state.books}/>
             )} />
+
             <Route  path='/Search' render ={() => {
                 return(
                     <div>heloo search</div> 

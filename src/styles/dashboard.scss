@@ -40,9 +40,9 @@
     align-items: center;
     font-size: 0;
 
-    &__back--current,
-    &__back--r,
-    &__back--wantTo {
+    &__back--currentlyReading,
+    &__back--read,
+    &__back--wantToRead {
       background-image: url(../icons/left-arrow.svg);
       background-repeat: no-repeat;
       background-position: center;
@@ -57,9 +57,9 @@
       }
     }
 
-    &__next--current,
-    &__next--r,
-    &__next--wantTo {
+    &__next--currentlyReading,
+    &__next--read,
+    &__next--wantToRead {
       background-image: url(../icons/right-arrow.svg);
       background-repeat: no-repeat;
       background-position: center;
@@ -75,14 +75,14 @@
   }
 }
 //-----currently-reading--------
-.cr-container {
+.currentlyReading-container {
   grid-column: 2/10;
   grid-row: 1/2;
   //   background-color: $primaryColor;
 }
 
-.current-swiper-container,
-.wantTo-swiper-container {
+.currentlyReading-swiper-container,
+.wantToRead-swiper-container {
   width: 100%;
   margin: 2rem auto;
 }
@@ -90,7 +90,7 @@
   display: flex;
 }
 
-.CurrentlyReadingCard-container {
+.bookCards-container {
   width: 35rem;
   height: 19rem;
   flex: 2;
@@ -190,10 +190,24 @@
     outline: none;
     z-index: 2;
     position: relative;
-
+    text-align: left;
+    padding-left: 1rem;
     // line-height: 1;
     &:hover {
       background-color: #ca0e56;
+    }
+
+    &::after {
+      position: absolute;
+      right: 1.1rem;
+      top: 1.4rem;
+      content: '';
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: .5rem .4rem 0 .4rem;
+      border-color: rgb(255, 255, 255) transparent transparent transparent;
+      border-radius: .4rem;
     }
   }
 
@@ -231,14 +245,14 @@
 }
 
 //------want-to-read---------
-.wtr-container {
+.wantToRead-container {
   grid-column: 2/10;
   grid-row: 2/3;
   //   overflow: hidden;
 }
 
 //--------------read---------------
-.r-container {
+.read-container {
   grid-column: 2/10;
   grid-row: 3/4;
   //   background-color: grey;

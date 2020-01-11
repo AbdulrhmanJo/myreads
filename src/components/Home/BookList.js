@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Swiper from 'swiper/js/swiper.esm.bundle';
-import CurrenltyReadingCard from './currentlyReadingCard';
+import HomeReadingCard from './homeReadingCard';
 
 
 class BookList extends Component {
@@ -26,7 +26,7 @@ class BookList extends Component {
             <div className="swiper-wrapper">
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
-                        <CurrenltyReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
+                        <HomeReadingCard bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating}/>
                     </div>
                 ))
                 }

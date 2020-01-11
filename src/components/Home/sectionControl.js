@@ -20,6 +20,7 @@ const SectionControl =(props) => {
 SectionControl.propTypes = {
     sectionName:PropTypes.string.isRequired,
     numOfbook:PropTypes.number.isRequired,
+    shelf:PropTypes.string.isRequired,
 }
 
 export default SectionControl;
