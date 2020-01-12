@@ -35,8 +35,7 @@ class BookList extends Component {
                             <BookCard handleBookChange={this.handleBookChange} id={book.id} bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating} shelf={this.props.sectionName}/>
                         </div>
                     </div>
-                ))
-                }
+                ))}
             </div>
           </div>
     

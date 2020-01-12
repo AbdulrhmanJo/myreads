@@ -6,7 +6,7 @@
   position: fixed;
   z-index: 1;
   overflow-x: hidden;
-  background-color: cornsilk;
+  background-color: white;
   font-size: 1.5rem;
   z-index: 100;
 
@@ -54,7 +54,7 @@
     }
   }
   .sidenav-item:hover:not(.sidenav-item__active) {
-    background-color: rgb(158, 158, 158);
+    background-color: grey;
     border-radius: 0.5rem;
     // transform: scale(1.07);
   }
@@ -63,7 +63,7 @@
   }
 
   .sidenav-item__active {
-    background-color: #c9c9c994;
+    background-color: #e9defa94;
     border-radius: 0.5rem;
   }
 }

@@ -4,6 +4,10 @@ import '../styles/dashboard.scss';
 
 
 class Button extends Component {
+    constructor(props){
+        super(props);
+        this.choices = ['Currently reading','Want to read','read','none'];
+    }
 
     handleButtonClick = (event) =>{
         const button = event.target; 
@@ -39,12 +43,17 @@ class Button extends Component {
     render(){
         return(
             <div className="dropdown">
-                <button className="dropdown-button" onClick={this.handleButtonClick}>{this.props.shelf}</button>
-                <div className="dropdown-choices">
-                    <a onClick={this.handleChoice} name="Currently reading" >Currently reading</a>
-                    <a onClick={this.handleChoice} name="Want to read" >Want to read</a>
-                    <a onClick={this.handleChoice} name="Read">Read</a>
-                    <a onClick={this.handleChoice} name="None">None</a>
+                <button className="dropdown-button" onClick={this.handleButtonClick}>{this.props.shelf}</button> 
+                 <div className="dropdown-choices">
+                     {this.choices.map((choice) => (
+                         this.props.shelf === choice 
+                         ? (<a onClick={this.handleChoice} className="choice-active">{choice}</a>)
+                         : (<a onClick={this.handleChoice} >{choice}</a>)
+                     ))}
+        {/* <a onClick={this.handleChoice} >{this.props.shelf === 'Currently reading' ? ('Currently reading .'): 'Currently reading'}</a>
+                    <a onClick={this.handleChoice} >Want to read</a>
+                    <a onClick={this.handleChoice} >Read</a>
+                    <a onClick={this.handleChoice} >None</a> */}
                 </div>
             </div>
         )

@@ -193,6 +193,7 @@
     text-align: left;
     padding-left: 1rem;
     // line-height: 1;
+
     &:hover {
       background-color: #ca0e56;
     }
@@ -201,13 +202,13 @@
       position: absolute;
       right: 1.1rem;
       top: 1.4rem;
-      content: '';
+      content: "";
       width: 0px;
       height: 0px;
       border-style: solid;
-      border-width: .5rem .4rem 0 .4rem;
+      border-width: 0.5rem 0.4rem 0 0.4rem;
       border-color: rgb(255, 255, 255) transparent transparent transparent;
-      border-radius: .4rem;
+      border-radius: 0.4rem;
     }
   }
 
@@ -233,7 +234,7 @@
       transition: all 0.2s;
       border-radius: 0.4rem;
 
-      &:hover {
+      &:hover:not(.choice-active) {
         background-color: rgb(226, 226, 226);
       }
     }
@@ -242,6 +243,19 @@
 
 .show {
   display: block;
+}
+
+.choice-active {
+  font-weight: 700;
+}
+
+.empty-message {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(180, 180, 180);
+  text-align: center;
+  padding: 3rem;
 }
 
 //------want-to-read---------

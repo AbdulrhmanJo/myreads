@@ -27,7 +27,14 @@ class BookShelf extends Component {
         return(
             <div className={`${this.shelfName('')}-container`}>
                 <SectionControl shelf={this.shelfName('')} sectionName={this.props.name} numOfbook={this.props.books.length}/>
-                <BookList handleChangeBookShelf={this.handleChangeBookShelf} shelf={this.shelfName('')} sectionName={this.props.name} books={this.props.books}/>
+                {this.props.books.length > 0 
+                    ?   (<BookList 
+                            handleChangeBookShelf={this.handleChangeBookShelf} 
+                            shelf={this.shelfName('')} 
+                            sectionName={this.props.name} 
+                            books={this.props.books}/>)
+                    :   (<p className="empty-message">{`Shelf is Empty`}</p>)
+                }
             </div>
         )
     }
