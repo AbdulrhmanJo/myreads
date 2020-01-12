@@ -59,12 +59,12 @@ class Search extends Component {
                 <p>{this.state.query}</p>
                 <div className="books-container">
                     {
-                        this.state.books && (this.state.books.map((book) => (                                                        
+                        this.state.books.length > 0  && (this.state.books.map((book) => (                                                        
                             <BookCard
                             key={book.id} 
-                            bookImg={book.imageLinks.thumbnail} 
+                            bookImg={book.imageLinks ? book.imageLinks.thumbnail : ''} 
                             bookName={book.title}
-                            bookAuthor={book.authors}
+                            bookAuthor={book.authors ? book.authors : []}
                             avgRate={book.averageRating ? book.averageRating : 5}
                             />
                         )))
