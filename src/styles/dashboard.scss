@@ -4,10 +4,8 @@
   padding: 3rem 1rem;
   display: grid;
   grid-template-columns: 1rem repeat(8, 1fr) 1rem;
-  grid-template-rows: repeat(3, min-content) 5rem;
   grid-row-gap: 3rem;
   grid-column-gap: 3rem;
-  height: inherit;
   // overflow: hidden;
 }
 

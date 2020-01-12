@@ -47,13 +47,9 @@ class Button extends Component {
                  <div className="dropdown-choices">
                      {this.choices.map((choice) => (
                          this.props.shelf === choice 
-                         ? (<a onClick={this.handleChoice} className="choice-active">{choice}</a>)
-                         : (<a onClick={this.handleChoice} >{choice}</a>)
+                         ? (<a key={choice} onClick={this.handleChoice} className="choice-active">{choice}</a>)
+                         : (<a key={choice} onClick={this.handleChoice} >{choice}</a>)
                      ))}
-        {/* <a onClick={this.handleChoice} >{this.props.shelf === 'Currently reading' ? ('Currently reading .'): 'Currently reading'}</a>
-                    <a onClick={this.handleChoice} >Want to read</a>
-                    <a onClick={this.handleChoice} >Read</a>
-                    <a onClick={this.handleChoice} >None</a> */}
                 </div>
             </div>
         )

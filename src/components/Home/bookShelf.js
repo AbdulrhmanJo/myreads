@@ -7,8 +7,7 @@ import BookList from './BookList'
 class BookShelf extends Component {
     shelfName = (choice) => {
         const shelfName  = choice === '' ? this.props.name : choice;
-        console.log(shelfName);
-        
+                
         if(shelfName === 'Currently reading'){
             return 'currentlyReading';
         }else if(shelfName === 'Want to read'){
