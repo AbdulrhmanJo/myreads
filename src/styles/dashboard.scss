@@ -1,11 +1,11 @@
 @import "./colors.scss";
 
 .db-container {
-  padding: 3rem 1rem;
+  padding: 6rem 6rem;
   display: grid;
   grid-template-columns: 1rem repeat(8, 1fr) 1rem;
   grid-row-gap: 3rem;
-  grid-column-gap: 3rem;
+  // grid-column-gap: 3rem;
   // overflow: hidden;
 }
 
@@ -215,6 +215,7 @@
     display: none;
     position: absolute;
     margin-top: 0.4rem;
+    margin-bottom: 1.4rem;
     background-color: #f9f9f9;
     min-width: 1.6rem;
     box-shadow: 0 0.8rem 1.6rem 0 rgba(0, 0, 0, 0.2);

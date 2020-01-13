@@ -38,15 +38,49 @@
     align-self: stretch;
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(27rem,1fr));
+    grid-gap: 1.2rem;
 
 }
-
-
 
 .book{
     background-color: aqua;
     font-size: 1.4rem;
     // padding: 12rem;
 }
+
+.search-Img{
+    margin-top: 12rem;
+    width: 65rem;
+    filter: invert(6%) sepia(79%) saturate(1) hue-rotate(611deg) brightness(356%) contrast(93%);
+
+    & ~ p{
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: rgb(209, 209, 209);
+        margin-top: -37rem;
+        letter-spacing: .3rem;
+        text-align: left;
+        width: 22rem;
+        margin-left: 12rem;
+    }
+}
+
+
+.search-Error{
+    margin-top: 8rem;
+    width: 75rem;
+    filter: invert(80%) sepia(79%) saturate(1) hue-rotate(211deg) brightness(356%) contrast(93%);
+
+    & ~ p{
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: rgb(187, 187, 187);
+        margin-top: -6rem;
+        letter-spacing: .3rem;
+        text-align: center;
+    }
+}
+
+

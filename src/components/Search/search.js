@@ -4,6 +4,9 @@ import '../../styles/search.scss';
 import searchIcon from '../../icons/search.svg';
 import * as BookAPI from '../../utils/BooksAPI';
 import BookCard from '../Home/bookCard';
+import searchImg from '../../icons/clip-education.png';
+import searchError from '../../icons/clip-bad-gateaway.png';
+
 
 class Search extends Component {
     state = {
@@ -22,10 +25,12 @@ class Search extends Component {
     }
 
     changeBookState = (books , requestState) => {
-        this.setState({ 
-            books: books,
-            requestError: requestState,
-        })
+        if(this.state.query){
+            this.setState({ 
+                books: books,
+                requestError: requestState,
+            })
+        }
     }
 
     requestBook = async (event) => {
@@ -33,13 +38,12 @@ class Search extends Component {
         this.handleUserInput(query);
 
         if(query){
-            const response = await this.getBooks(query);
+            const response = await this.getBooks(query);            
             if(response.error){
                 this.changeBookState([], true);
             }else{
                 this.changeBookState(response, false);
             }
-            console.log(response);
         }else{
             this.changeBookState([], false);
         }
@@ -82,9 +86,19 @@ class Search extends Component {
         // }
     }
 
-    // ChangeBookShelf = (shelf,bookId) => {
-    //     this.props.updateBookShelf(shelf,bookId)
-    // }
+    handleBookChange = (choice,bookId) => {
+        let shelf = '';
+        if(choice === 'Currently reading'){
+            shelf = 'currentlyReading'
+        }else if(choice === 'Want to read'){
+            shelf = 'wantToRead'
+        }else if(choice === 'read'){
+            shelf = 'read'
+        }else {
+            shelf = 'none'
+        }
+        this.props.updateBookShelf(shelf,bookId)
+    }
 
     render(){
         return (
@@ -97,35 +111,37 @@ class Search extends Component {
                     />
                     <img src={searchIcon} alt="search icon" className="search-bar-icon"></img>
                 </div>
-                <p>{this.state.query}</p>
-                <div className="books-container">
-                    {
-                        this.state.books.length > 0  && (this.state.books.map((book) => (                                                        
-                            <BookCard
-                            key={book.id} 
-                            bookImg={book.imageLinks ? book.imageLinks.thumbnail : ''} 
-                            bookName={book.title}
-                            bookAuthor={book.authors ? book.authors : []}
-                            avgRate={book.averageRating ? book.averageRating : 0}
-                            shelf={this.getBookShelf(book.id)}
-                            />
-                        )))
-                        
-                    }
-                    {/* <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div>
-                    <div className="book" >book</div> */}
-                </div>
-               
+                {
+                    !this.state.query && (<div><img src={searchImg} alt='searchImg' className="search-Img"></img>
+                                        <p>Meet your next Book</p></div>)
+                }
+                
+                {
+                    !this.state.requestError ?
+                        <div className="books-container">
+                            {
+                                
+                                this.state.query && (this.state.books.map((book) => (                                                        
+                                    <BookCard
+                                    key={book.id}
+                                    id={book.id}  
+                                    bookImg={book.imageLinks ? book.imageLinks.thumbnail : ''} 
+                                    bookName={book.title}
+                                    bookAuthor={book.authors ? book.authors : []}
+                                    avgRate={book.averageRating ? book.averageRating : 0}
+                                    shelf={this.getBookShelf(book.id)}
+                                    handleBookChange={this.handleBookChange}
+                                    />
+                                ))) 
+                            }
+                        </div>
+                    :   (<div>
+                            <img src={searchError} alt='searchError' className="search-Error"></img>
+                            <p>No results found. Try something else.</p>
+                        </div>
+                        )
+
+                }
             </div>
         )
     }
