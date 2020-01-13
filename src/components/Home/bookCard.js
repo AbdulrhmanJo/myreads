@@ -9,8 +9,7 @@ class BookCard extends Component {
     handleButtonChoice = (choice) => {
         this.props.handleBookChange(choice, this.props.id);
         const cards = document.querySelectorAll(".bookCard-container");
-        console.log(cards);
-        
+                
         for (let card of cards) {
             if(card.textContent.includes(this.props.bookName) && card.textContent.includes(this.props.bookAuthor[0])){
                 card.style.opacity = "0.3";

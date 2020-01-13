@@ -67,7 +67,7 @@ class Content extends Component {
                 )} />
 
                 <Route  path='/Search' render ={() => (
-                    <Search />
+                    <Search books={this.state.books} updateBookShelf={this.updateBookShelf}/>
                 )} />
 
                 <Route  path='/Currently-reading' render ={() => {

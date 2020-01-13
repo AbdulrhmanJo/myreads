@@ -45,6 +45,47 @@ class Search extends Component {
         }
     }
 
+    getBookShelf = (BookId) => {
+        const booksOntheShelf = this.props.books;
+        let shelf = '';
+        for (let i = 0; i < booksOntheShelf.length; i++) {
+            if(booksOntheShelf[i].shelf === 'wantToRead' && booksOntheShelf[i].id === BookId){
+                shelf = 'Want to read';
+                break;
+            }else if(booksOntheShelf[i].shelf === 'currentlyReading' && booksOntheShelf[i].id === BookId){
+                shelf = 'Currently reading';
+                break;
+            }else if(booksOntheShelf[i].shelf === 'read' && booksOntheShelf[i].id === BookId){
+                shelf = 'read';
+                break;
+            }else{
+                shelf = 'none';
+            }
+            
+        }
+            
+        return shelf;
+        // for (let i = 0; i < searchBooks.length; i++) {
+        //     for (let j = 0; j < booksOntheShelf.length; j++) {
+        //         if(booksOntheShelf[j].shelf === "wantToRead" && booksOntheShelf[j].id === searchBooks[i].id){
+        //             console.log(booksOntheShelf[j]);
+        //             return 'Want to read';
+        //         }// }else if(booksOntheShelf[j].id === searchBooks[i].id && booksOntheShelf[j].shelf === "currentlyReading"){
+        //         //     return 'Currently reading';
+        //         // }else if(booksOntheShelf[j].id === searchBooks[i].id && booksOntheShelf[j].shelf === "read"){
+        //         //     return 'read';
+        //         // }else {
+        //         //     return 'none'
+        //         // }             
+        //     }
+            
+        // }
+    }
+
+    // ChangeBookShelf = (shelf,bookId) => {
+    //     this.props.updateBookShelf(shelf,bookId)
+    // }
+
     render(){
         return (
             <div className="search-container">
@@ -65,7 +106,8 @@ class Search extends Component {
                             bookImg={book.imageLinks ? book.imageLinks.thumbnail : ''} 
                             bookName={book.title}
                             bookAuthor={book.authors ? book.authors : []}
-                            avgRate={book.averageRating ? book.averageRating : 5}
+                            avgRate={book.averageRating ? book.averageRating : 0}
+                            shelf={this.getBookShelf(book.id)}
                             />
                         )))
                         
