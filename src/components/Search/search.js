@@ -6,6 +6,7 @@ import * as BookAPI from '../../utils/BooksAPI';
 import BookCard from '../Home/bookCard';
 import searchImg from '../../icons/clip-education.png';
 import searchError from '../../icons/clip-bad-gateaway.png';
+import BookError from '../../icons/abstract-searching.png'
 
 
 class Search extends Component {
@@ -35,6 +36,7 @@ class Search extends Component {
 
     requestBook = async (event) => {
         const query = event.target.value;
+        
         this.handleUserInput(query);
 
         if(query){
@@ -125,9 +127,9 @@ class Search extends Component {
                                     <BookCard
                                     key={book.id}
                                     id={book.id}  
-                                    bookImg={book.imageLinks ? book.imageLinks.thumbnail : ''} 
+                                    bookImg={book.imageLinks ? book.imageLinks.thumbnail : BookError} 
                                     bookName={book.title}
-                                    bookAuthor={book.authors ? book.authors : []}
+                                    bookAuthor={book.authors ? book.authors : ['author: not available']}
                                     avgRate={book.averageRating ? book.averageRating : 0}
                                     shelf={this.getBookShelf(book.id)}
                                     handleBookChange={this.handleBookChange}
@@ -137,7 +139,7 @@ class Search extends Component {
                         </div>
                     :   (<div>
                             <img src={searchError} alt='searchError' className="search-Error"></img>
-                            <p>No results found. Try something else.</p>
+                            <p>Sorry we couldn't find any matches for <span>{this.state.query}</span></p>
                         </div>
                         )
 

@@ -81,6 +81,11 @@
         letter-spacing: .3rem;
         text-align: center;
     }
+
+    & ~ p span{
+        font-size: 2rem;
+        color: #ab88e0;
+    }
 }
 
 
