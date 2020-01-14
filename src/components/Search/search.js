@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../styles/search.scss';
 import searchIcon from '../../icons/search.svg';
 import * as BookAPI from '../../utils/BooksAPI';
-import BookCard from '../Home/bookCard';
+import BookCard from '../bookCard';
 import searchImg from '../../icons/clip-education.png';
 import searchError from '../../icons/clip-bad-gateaway.png';
 import BookError from '../../icons/abstract-searching.png'
@@ -114,8 +114,11 @@ class Search extends Component {
                     <img src={searchIcon} alt="search icon" className="search-bar-icon"></img>
                 </div>
                 {
-                    !this.state.query && (<div><img src={searchImg} alt='searchImg' className="search-Img"></img>
-                                        <p>Meet your next Book</p></div>)
+                    !this.state.query && (
+                                        <div>
+                                            <img src={searchImg} alt='searchImg' className="search-Img"></img>
+                                            <p>Meet your next <span>Book</span> </p>
+                                        </div>)
                 }
                 
                 {

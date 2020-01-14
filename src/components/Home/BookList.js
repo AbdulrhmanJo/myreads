@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Swiper from 'swiper/js/swiper.esm.bundle';
-import BookCard from './bookCard';
+import BookCard from '../bookCard';
 
 
 

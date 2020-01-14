@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../../styles/dashboard.scss';
+import '../styles/dashboard.scss';
 import Rater from 'react-rater';
-import Button from '../Button'
+import Button from './Button'
 
 class BookCard extends Component {
 

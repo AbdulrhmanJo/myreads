@@ -5,7 +5,9 @@ import Dashboard from './Home/Dashboard';
 import * as BooksAPI from '../utils/BooksAPI';
 import HomeLoader from './Home/homeLoader';
 import Search from './Search/search'
+import Shelf from './shelf/shelf';
 import '../styles/content.scss'
+
 
 
 class Content extends Component {
@@ -28,6 +30,8 @@ class Content extends Component {
                 books:[...books],
                 hasContent:true,
             })
+            console.log(books);
+            
         }) 
     }
 
@@ -48,6 +52,11 @@ class Content extends Component {
         this.updateBook(book,shelf);
     }
     
+    getShelfBooks = (shelf) => {
+        return this.state.books.filter(book => (
+            book.shelf === shelf
+        ))
+    }
 
     render(){        
         return(
@@ -70,23 +79,29 @@ class Content extends Component {
                     <Search books={this.state.books} updateBookShelf={this.updateBookShelf}/>
                 )} />
 
-                <Route  path='/Currently-reading' render ={() => {
-                    return(
-                        <div>heloo currently reading</div> 
-                        )
-                }} />
+                <Route  path='/Currently-reading' render ={() => (
+                    <Shelf 
+                        shelfName='Currently reading' 
+                        numOfBooks={this.getShelfBooks('currentlyReading').length}
+                        books={this.getShelfBooks('currentlyReading')}
+                    />
+                )} />
 
-                <Route  path='/Want-To-Read' render ={() => {
-                    return(
-                        <div>heloo want to read</div> 
-                        )
-                }} />
+                <Route  path='/Want-To-Read' render ={() => (
+                    <Shelf 
+                    shelfName='Want to read' 
+                    numOfBooks={this.getShelfBooks('wantToRead').length}
+                    books={this.getShelfBooks('wantToRead')}
+                    />
+                )} />
 
-                <Route  path='/Read' render ={() => {
-                    return(
-                        <div>heloo read</div> 
-                        )
-                }} />
+                <Route  path='/Read' render ={() => (
+                    <Shelf 
+                    shelfName='Read' 
+                    numOfBooks={this.getShelfBooks('read').length}
+                    books={this.getShelfBooks('read')}
+                    />
+                )} />
             </div>
 
         );
