@@ -61,11 +61,11 @@ class Content extends Component {
     render(){        
         return(
             <div className="content">
-                <Route  exact path='/' render ={() => (
-                    <Redirect to='/Dashboard'/>
+                <Route  exact path='/myreads/' render ={() => (
+                    <Redirect to='/myreads/Dashboard'/>
                 )} />
                 
-                <Route  path='/Dashboard' render={() => (
+                <Route  path='/myreads/Dashboard' render={() => (
                     <div>
                         {this.state.hasContent ? (
                             <Dashboard books={this.state.books} updateBookShelf={this.updateBookShelf}/>
@@ -75,11 +75,11 @@ class Content extends Component {
                     </div>
                 )} />
 
-                <Route  path='/Search' render ={() => (
+                <Route  path='/myreads/Search' render ={() => (
                     <Search books={this.state.books} updateBookShelf={this.updateBookShelf}/>
                 )} />
 
-                <Route  path='/Currently-reading' render ={() => (
+                <Route  path='/myreads/Currently-reading' render ={() => (
                     <Shelf 
                         shelfName='Currently reading' 
                         numOfBooks={this.getShelfBooks('currentlyReading').length}
@@ -88,7 +88,7 @@ class Content extends Component {
                     />
                 )} />
 
-                <Route  path='/Want-To-Read' render ={() => (
+                <Route  path='/myreads/Want-To-Read' render ={() => (
                     <Shelf 
                     shelfName='Want to read' 
                     numOfBooks={this.getShelfBooks('wantToRead').length}
@@ -97,7 +97,7 @@ class Content extends Component {
                     />
                 )} />
 
-                <Route  path='/Read' render ={() => (
+                <Route  path='/myreads/Read' render ={() => (
                     <Shelf 
                     shelfName='Read' 
                     numOfBooks={this.getShelfBooks('read').length}

@@ -23,7 +23,7 @@ class Navigation extends Component {
                             this.discoverNavItem.map((item) => (
                                 <NavLink 
                                     key={item.name} 
-                                    to={`/${item.name}`} 
+                                    to={`/myreads/${item.name}`} 
                                     className="sidenav-item"
                                     activeClassName="sidenav-item__active"
                                     >
@@ -39,7 +39,7 @@ class Navigation extends Component {
                             this.shelfNavItem.map((item) => (
                                 <NavLink 
                                     key={item.name} 
-                                    to={`/${item.name}`} 
+                                    to={`/myreads/${item.name}`} 
                                     className="sidenav-item"
                                     activeClassName="sidenav-item__active"
                                     >
