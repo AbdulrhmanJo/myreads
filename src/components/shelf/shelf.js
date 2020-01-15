@@ -5,6 +5,7 @@ import BookCard from '../bookCard';
 import SectionControl from '../Home/sectionControl';
 import ShelfButton from './shelfButton';
 import BookError from '../../icons/abstract-searching.png'
+import shelfEmpty from '../../icons/fogg-unsubscribed-1.png'
 
 
 
@@ -130,6 +131,8 @@ class Shelf extends Component {
 
                 <div className="books-container shelf">
                     {
+
+                        this.showBooksByCatagory(this.state.catagory).length > 0 ?
                         this.showBooksByCatagory(this.state.catagory).map((book) => (
                             <BookCard
                                 key={book.id}
@@ -142,6 +145,7 @@ class Shelf extends Component {
                                 handleBookChange={this.handleBookChange}
                             />
                         ))
+                        : <p className="shelf-empty">Shelf is Empty</p>
                     }
                 </div>
             </div>

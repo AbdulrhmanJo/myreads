@@ -84,6 +84,7 @@ class Content extends Component {
                         shelfName='Currently reading' 
                         numOfBooks={this.getShelfBooks('currentlyReading').length}
                         books={this.getShelfBooks('currentlyReading')}
+                        updateBookShelf={this.updateBookShelf}
                     />
                 )} />
 
@@ -92,6 +93,7 @@ class Content extends Component {
                     shelfName='Want to read' 
                     numOfBooks={this.getShelfBooks('wantToRead').length}
                     books={this.getShelfBooks('wantToRead')}
+                    updateBookShelf={this.updateBookShelf}
                     />
                 )} />
 
@@ -100,6 +102,7 @@ class Content extends Component {
                     shelfName='Read' 
                     numOfBooks={this.getShelfBooks('read').length}
                     books={this.getShelfBooks('read')}
+                    updateBookShelf={this.updateBookShelf}
                     />
                 )} />
             </div>

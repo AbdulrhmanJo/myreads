@@ -68,3 +68,15 @@
 .show {
     display: block;
   }
+
+
+  .shelf-empty{
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgb(173, 173, 173);
+      grid-column: 1/-1;
+      padding: 27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
