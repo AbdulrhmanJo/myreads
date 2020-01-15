@@ -1,5 +1,12 @@
 @import './colors.scss';
 
+
+$bp-largest: 80em;
+$bp-large: 56.25em;
+$bp-md: 43.75em;
+$bp-sm: 35em;
+
+
 *,
 *::after,
 *::before{
@@ -10,10 +17,29 @@
 
 html {
   font-size: 62.5%; // 1rem = 10px
+  @media only screen and (max-width: $bp-largest) {
+      font-size: 55%; // 1rem = 10p
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; // 1rem = 10p
+}
+
+@media only screen and (max-width: $bp-md) {
+  font-size: 48%; // 1rem = 10p
+}
+
+@media only screen and (max-width: $bp-sm) {
+  font-size: 45%; // 1rem = 10p
+}
+
 }
 
 
 .container {
+  @media only screen and (max-width: $bp-large) {
+    flex-direction: column;
+}
   display: flex;
   flex-wrap: nowrap;
   font-family: "Open Sans", sans-serif;

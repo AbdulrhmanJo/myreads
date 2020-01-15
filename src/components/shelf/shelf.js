@@ -5,12 +5,10 @@ import BookCard from '../bookCard';
 import SectionControl from '../Home/sectionControl';
 import ShelfButton from './shelfButton';
 import BookError from '../../icons/abstract-searching.png'
-import shelfEmpty from '../../icons/fogg-unsubscribed-1.png'
 
 
 
 class Shelf extends Component {
-    
     state = {
         catagory: 'All'
     }

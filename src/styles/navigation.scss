@@ -1,16 +1,36 @@
 @import "./colors.scss";
 
+$bp-largest: 80em;
+$bp-large: 56.25em;
+$bp-md: 43.75em;
+$bp-sm: 35em;
+
 .nav-container {
   // height: 100%;
   // width: 27rem;
+
+  @media only screen and (max-width: $bp-large){
+    width: 100%;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  }
   width: 27rem;
   position: sticky;
   // overflow-x: hidden;
   background-color: white;
+    @media only screen and (max-width: $bp-largest){
+      font-size: 1.7rem;
+    }
+    
   font-size: 1.5rem;
   z-index: 100;
 
   .heading {
+    @media only screen and (max-width: $bp-large){
+      margin-top: 3rem;
+      margin-bottom: 2.5rem;
+      font-size: 4rem;
+    }
+    
     font-size: 3.5rem;
     text-align: center;
     margin-top: 5rem;
@@ -24,20 +44,49 @@
   }
 
   .sidenav {
+
     width: 22rem;
     padding-left: 5rem;
+    @media only screen and (max-width: $bp-large){
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-left: 0;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.425);
+      padding: 1rem;
+    }
+
 
     &-section {
       margin-bottom: 4rem;
+      @media only screen and (max-width: $bp-large){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        
+      }
     }
 
     p {
       font-weight: 700;
       margin-bottom: 1rem;
+      @media only screen and (max-width: $bp-large){
+        display: none;
+        visibility: hidden;
+      }
     }
 
     &-item {
       text-decoration: none;
+      @media only screen and (max-width: $bp-large){
+        justify-content: center;
+        align-items: center;
+        padding: .5rem 2rem;
+        margin: .5rem;
+      }
       display: flex;
       padding-left: 1rem;
       margin-bottom: 1rem;

@@ -1,8 +1,19 @@
+
+$bp-largest: 80em;
+$bp-large: 56.25em;
+$bp-md: 43.75em;
+$bp-sm: 35em;
+
 .shelf{
     &-container{
         padding: 6rem 6rem;
-        background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-        height: 100Vh;
+        background-image: linear-gradient(to bottom, #e9defa 0%, #ffffff 100%);
+
+        @media only screen and (max-width: $bp-large) {
+            background-image: none;
+            background-color:  white; 
+        }
+
     }
    
     &-wrapper{
@@ -26,6 +37,11 @@
       height: 3.6rem;
       border-radius: 0.6rem;
       background-color: rgba(255, 255, 255, 0.986);
+
+      @media only screen and (max-width: $bp-large) {
+        background-color:  rgb(221, 221, 221); 
+    }
+
       color: black;
       border: 0;
       transition: all 0.2s;
@@ -38,6 +54,9 @@
       padding-left: 1rem;
   
       &:hover {
+        @media only screen and (max-width: $bp-large) {
+            background-color:  rgb(199, 199, 199); 
+        }
         background-color: #f1f1f1;
       }
   
@@ -71,11 +90,12 @@
 
 
   .shelf-empty{
-      font-size: 3.5rem;
+
+      font-size: 3rem;
       font-weight: 700;
       color: rgb(173, 173, 173);
       grid-column: 1/-1;
-      padding: 27rem;
+      padding-top: 15rem;
     display: flex;
     justify-content: center;
     align-items: center;

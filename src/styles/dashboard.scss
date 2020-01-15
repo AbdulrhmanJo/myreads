@@ -1,7 +1,13 @@
 @import "./colors.scss";
 
+
+$bp-largest: 80em;
+$bp-large: 56.25em;
+$bp-md: 43.75em;
+$bp-sm: 35em;
+
 .db-container {
-  padding: 6rem 6rem;
+  padding: 6rem 6rem 10rem;
   display: grid;
   grid-template-columns: 1rem repeat(8, 1fr) 1rem;
   grid-row-gap: 3rem;
@@ -90,6 +96,8 @@
 }
 
 .bookCard-container {
+
+  
   width: 35rem;
   height: 19rem;
   flex: 2;
@@ -175,6 +183,10 @@
 
 .dropdown {
   &-button {
+    
+    @media only screen and (max-width: $bp-sm) {
+      width: 100%;
+  }
     width: 100%;
     height: 3rem;
     border-radius: 0.6rem;
