@@ -61,7 +61,7 @@ class Content extends Component {
     render(){        
         return(
             <div className="content">
-                <Route  exact path='/myreads/' render ={() => (
+                <Route  exact path='/myreads' render ={() => (
                     <Redirect to='/myreads/Dashboard'/>
                 )} />
                 
