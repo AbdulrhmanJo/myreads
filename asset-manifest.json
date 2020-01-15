@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/myreads/static/css/main.e5a1ea64.chunk.css",
+    "main.js": "/myreads/static/js/main.04513f8b.chunk.js",
+    "main.js.map": "/myreads/static/js/main.04513f8b.chunk.js.map",
+    "runtime-main.js": "/myreads/static/js/runtime-main.ed292944.js",
+    "runtime-main.js.map": "/myreads/static/js/runtime-main.ed292944.js.map",
+    "static/js/2.28436244.chunk.js": "/myreads/static/js/2.28436244.chunk.js",
+    "static/js/2.28436244.chunk.js.map": "/myreads/static/js/2.28436244.chunk.js.map",
+    "index.html": "/myreads/index.html",
+    "precache-manifest.a2eca02e71750509d4ea2d08cfe86fb3.js": "/myreads/precache-manifest.a2eca02e71750509d4ea2d08cfe86fb3.js",
+    "service-worker.js": "/myreads/service-worker.js",
+    "static/css/main.e5a1ea64.chunk.css.map": "/myreads/static/css/main.e5a1ea64.chunk.css.map",
+    "static/js/2.28436244.chunk.js.LICENSE": "/myreads/static/js/2.28436244.chunk.js.LICENSE",
+    "static/media/abstract-searching.png": "/myreads/static/media/abstract-searching.c25f4472.png",
+    "static/media/book-of-black-cover-closed.svg": "/myreads/static/media/book-of-black-cover-closed.6705a44b.svg",
+    "static/media/clip-bad-gateaway.png": "/myreads/static/media/clip-bad-gateaway.b731be81.png",
+    "static/media/clip-education.png": "/myreads/static/media/clip-education.a9765fb4.png",
+    "static/media/dashboard.svg": "/myreads/static/media/dashboard.7217f10c.svg",
+    "static/media/dashboard.scss": "/myreads/static/media/right-arrow.28f7c235.svg",
+    "static/media/search.svg": "/myreads/static/media/search.2ea4c436.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed292944.js",
+    "static/js/2.28436244.chunk.js",
+    "static/css/main.e5a1ea64.chunk.css",
+    "static/js/main.04513f8b.chunk.js"
+  ]
+}
