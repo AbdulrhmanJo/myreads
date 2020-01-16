@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Home from './Home/home';
 import * as BooksAPI from '../utils/BooksAPI';
 import HomeLoader from './Home/homeLoader';
@@ -59,7 +58,7 @@ class Content extends Component {
     render(){        
         return(
             <div className="content">
-                <Route  path='/' exact render ={() => (
+                <Route exact path='/' render ={() => (
                     <div>
                         {this.state.hasContent ? (
                             <Home books={this.state.books} updateBookShelf={this.updateBookShelf}/>

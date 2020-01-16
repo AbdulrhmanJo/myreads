@@ -4,7 +4,7 @@ import Search from '../icons/search.svg'
 import Dashboard from '../icons/dashboard.svg'
 import book from '../icons/book-of-black-cover-closed.svg'
 import { NavLink } from 'react-router-dom'
-import { exact } from 'prop-types'
+
 
 class Navigation extends Component {
     constructor(props){

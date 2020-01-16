@@ -47,8 +47,8 @@ class Button extends Component {
                  <div className="dropdown-choices">
                      {this.choices.map((choice) => (
                          this.props.shelf === choice 
-                         ? (<a key={choice} onClick={this.handleChoice} className="choice-active">{choice}</a>)
-                         : (<a key={choice} onClick={this.handleChoice} >{choice}</a>)
+                         ? (<div key={choice} onClick={this.handleChoice} className="choice-active">{choice}</div>)
+                         : (<div key={choice} onClick={this.handleChoice} >{choice}</div>)
                      ))}
                 </div>
             </div>

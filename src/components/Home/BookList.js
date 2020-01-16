@@ -8,7 +8,7 @@ import BookCard from '../bookCard';
 class BookList extends Component {
 
     componentDidMount() {
-        const swiper = new Swiper(`.${this.props.shelf}-swiper-container`, 
+        new Swiper(`.${this.props.shelf}-swiper-container`, 
             {
                 slidesPerView: 4,
                 spaceBetween: 20,
