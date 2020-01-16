@@ -4,7 +4,7 @@ import Search from '../icons/search.svg'
 import Dashboard from '../icons/dashboard.svg'
 import book from '../icons/book-of-black-cover-closed.svg'
 import { NavLink } from 'react-router-dom'
-
+import menuIcon from '../icons/menu.svg'
 
 class Navigation extends Component {
     constructor(props){
@@ -12,11 +12,24 @@ class Navigation extends Component {
         this.discoverNavItem = [{name:'Home', img:Dashboard},{name:'Search', img:Search}];
         this.shelfNavItem = [{name:'Currently-reading', img:book},{name:'Want-to-read', img:book},{name:'Read', img:book}];
     }
+    toggleMenuIcon = () =>{
+        const sidenav = document.querySelector(".sidenav");
+        if(sidenav.classList.contains('show')){
+            sidenav.style.display = 'none';
+            sidenav.classList.remove('show');
+        }else{
+            sidenav.style.display = 'flex';
+            sidenav.classList.add('show');
+        }
+
+        
+    }
 
     render(){
         return(
             <div className="nav-container">
                 <h2 className="heading">my<span>reads</span></h2>
+                <img className="menuIcon" src={menuIcon} alt="menu icon" onClick={this.toggleMenuIcon}></img>
                 <div className="sidenav">
                     <div className="sidenav-section">
                         <p>Discover</p>
