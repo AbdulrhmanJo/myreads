@@ -35,3 +35,16 @@ serviceWorker.unregister();
 // comments may not be easy to understand. I wish you good luck for the project.
 
 // Keep learning and stay Udacious 
+
+
+
+
+// Great job, you made it, congrats
+
+// I love the creative UI design especially the swiper/carousel component
+
+// Do you want to take the project to the next level later as a practice?
+// Consider deploying it to a static web host like AWS, Netlify or Github Pages.
+// you can also add popular features like book preview, sharing on social media, recording progress and so on.
+
+// I'm sure you can come up with better ones and implement them all
