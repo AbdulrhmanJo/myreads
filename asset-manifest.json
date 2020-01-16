@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/myreads/static/css/main.bba1463c.chunk.css",
-    "main.js": "/myreads/static/js/main.b1b5b785.chunk.js",
-    "main.js.map": "/myreads/static/js/main.b1b5b785.chunk.js.map",
+    "main.css": "/myreads/static/css/main.674ba5f2.chunk.css",
+    "main.js": "/myreads/static/js/main.db5a97b1.chunk.js",
+    "main.js.map": "/myreads/static/js/main.db5a97b1.chunk.js.map",
     "runtime-main.js": "/myreads/static/js/runtime-main.ed292944.js",
     "runtime-main.js.map": "/myreads/static/js/runtime-main.ed292944.js.map",
     "static/js/2.58255016.chunk.js": "/myreads/static/js/2.58255016.chunk.js",
     "static/js/2.58255016.chunk.js.map": "/myreads/static/js/2.58255016.chunk.js.map",
     "index.html": "/myreads/index.html",
-    "precache-manifest.f4a97f6d2be4ff15ee22e97d4e1e4483.js": "/myreads/precache-manifest.f4a97f6d2be4ff15ee22e97d4e1e4483.js",
+    "precache-manifest.3010b4ba48d28111b74e3861f6b0598a.js": "/myreads/precache-manifest.3010b4ba48d28111b74e3861f6b0598a.js",
     "service-worker.js": "/myreads/service-worker.js",
-    "static/css/main.bba1463c.chunk.css.map": "/myreads/static/css/main.bba1463c.chunk.css.map",
+    "static/css/main.674ba5f2.chunk.css.map": "/myreads/static/css/main.674ba5f2.chunk.css.map",
     "static/js/2.58255016.chunk.js.LICENSE": "/myreads/static/js/2.58255016.chunk.js.LICENSE",
     "static/media/abstract-searching.png": "/myreads/static/media/abstract-searching.c25f4472.png",
     "static/media/book-of-black-cover-closed.svg": "/myreads/static/media/book-of-black-cover-closed.6705a44b.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.ed292944.js",
     "static/js/2.58255016.chunk.js",
-    "static/css/main.bba1463c.chunk.css",
-    "static/js/main.b1b5b785.chunk.js"
+    "static/css/main.674ba5f2.chunk.css",
+    "static/js/main.db5a97b1.chunk.js"
   ]
 }
