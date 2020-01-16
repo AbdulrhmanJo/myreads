@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
-import Dashboard from './Home/Dashboard';
+import Home from './Home/home';
 import * as BooksAPI from '../utils/BooksAPI';
 import HomeLoader from './Home/homeLoader';
 import Search from './Search/search'
@@ -29,9 +29,7 @@ class Content extends Component {
             this.setState({
                 books:[...books],
                 hasContent:true,
-            })
-            console.log(books);
-            
+            })            
         }) 
     }
 
@@ -61,25 +59,22 @@ class Content extends Component {
     render(){        
         return(
             <div className="content">
-                <Route  exact path='/myreads' render ={() => (
-                    <Redirect to='/myreads/Dashboard'/>
-                )} />
-                
-                <Route  path='/myreads/Dashboard' render={() => (
+                <Route  path='/' exact render ={() => (
                     <div>
                         {this.state.hasContent ? (
-                            <Dashboard books={this.state.books} updateBookShelf={this.updateBookShelf}/>
+                            <Home books={this.state.books} updateBookShelf={this.updateBookShelf}/>
                         ):(
                             <HomeLoader />
                         )}
                     </div>
+                    
                 )} />
 
-                <Route  path='/myreads/Search' render ={() => (
+                <Route   path='/search' render ={() => (
                     <Search books={this.state.books} updateBookShelf={this.updateBookShelf}/>
                 )} />
 
-                <Route  path='/myreads/Currently-reading' render ={() => (
+                <Route  path='/currently-reading' render ={() => (
                     <Shelf 
                         shelfName='Currently reading' 
                         numOfBooks={this.getShelfBooks('currentlyReading').length}
@@ -88,7 +83,7 @@ class Content extends Component {
                     />
                 )} />
 
-                <Route  path='/myreads/Want-To-Read' render ={() => (
+                <Route  path='/want-To-Read'  render ={() => (
                     <Shelf 
                     shelfName='Want to read' 
                     numOfBooks={this.getShelfBooks('wantToRead').length}
@@ -97,7 +92,7 @@ class Content extends Component {
                     />
                 )} />
 
-                <Route  path='/myreads/Read' render ={() => (
+                <Route  path='/read' render ={() => (
                     <Shelf 
                     shelfName='Read' 
                     numOfBooks={this.getShelfBooks('read').length}

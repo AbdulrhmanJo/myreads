@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BookShelf from './bookShelf';
 import '../../styles/dashboard.scss'
 
-class Dashboard extends Component {
+class Home extends Component {
 
     currentlyReadingBooks = () => {
         return this.props.books.filter((book) => (book.shelf === "currentlyReading"))
@@ -32,4 +32,9 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+Home.propTypes = {
+    books:PropTypes.array.isRequired,
+    updateBookShelf:PropTypes.func.isRequired
+}
+
+export default Home;

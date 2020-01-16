@@ -4,9 +4,6 @@ import '../../styles/shelf.scss';
 
 
 class ShelfButton extends Component {
-    constructor(props){
-        super(props);
-    }
 
     handleButtonClick = (event) =>{
         const button = event.target; 
@@ -53,6 +50,12 @@ class ShelfButton extends Component {
             </div>
         )
     }
+}
+
+ShelfButton.propTypes = {
+    catagory:PropTypes.string.isRequired,
+    catagories:PropTypes.array.isRequired,
+    handleButtonChoice:PropTypes.func.isRequired,
 }
 
 export default ShelfButton;

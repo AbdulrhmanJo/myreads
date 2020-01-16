@@ -32,7 +32,15 @@ class BookList extends Component {
                 {this.props.books.map((book) => (
                     <div key={book.id} className="swiper-slide">
                         <div key={book.id} className="bookCard-container">
-                            <BookCard handleBookChange={this.handleBookChange} id={book.id} bookName={book.title} bookAuthor={book.authors} bookImg={book.imageLinks.thumbnail} avgRate={book.averageRating} shelf={this.props.sectionName}/>
+                            <BookCard 
+                                handleBookChange={this.handleBookChange} 
+                                id={book.id} 
+                                bookName={book.title} 
+                                bookAuthor={book.authors} 
+                                bookImg={book.imageLinks.thumbnail} 
+                                avgRate={book.averageRating} 
+                                shelf={this.props.sectionName}
+                            />
                         </div>
                     </div>
                 ))}
@@ -41,6 +49,14 @@ class BookList extends Component {
     
         )
     }
+}
+
+
+BookList.propTypes = {
+    shelf:PropTypes.string.isRequired,
+    books:PropTypes.array.isRequired,
+    handleChangeBookShelf:PropTypes.func.isRequired,
+    sectionName:PropTypes.string.isRequired,
 }
 
 export default BookList;

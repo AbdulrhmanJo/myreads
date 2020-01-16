@@ -4,11 +4,12 @@ import Search from '../icons/search.svg'
 import Dashboard from '../icons/dashboard.svg'
 import book from '../icons/book-of-black-cover-closed.svg'
 import { NavLink } from 'react-router-dom'
+import { exact } from 'prop-types'
 
 class Navigation extends Component {
     constructor(props){
         super(props);
-        this.discoverNavItem = [{name:'Dashboard', img:Dashboard},{name:'Search', img:Search}];
+        this.discoverNavItem = [{name:'Home', img:Dashboard},{name:'Search', img:Search}];
         this.shelfNavItem = [{name:'Currently-reading', img:book},{name:'Want-to-read', img:book},{name:'Read', img:book}];
     }
 
@@ -23,7 +24,7 @@ class Navigation extends Component {
                             this.discoverNavItem.map((item) => (
                                 <NavLink 
                                     key={item.name} 
-                                    to={`/myreads/${item.name}`} 
+                                    exact to={item.name === "Home" ? '/'  : `/${item.name.toLowerCase()}`} 
                                     className="sidenav-item"
                                     activeClassName="sidenav-item__active"
                                     >
@@ -39,7 +40,7 @@ class Navigation extends Component {
                             this.shelfNavItem.map((item) => (
                                 <NavLink 
                                     key={item.name} 
-                                    to={`/myreads/${item.name}`} 
+                                    to={`/${item.name.toLowerCase()}`} 
                                     className="sidenav-item"
                                     activeClassName="sidenav-item__active"
                                     >

@@ -38,4 +38,14 @@ class BookCard extends Component {
     }
 }
 
+BookCard.propTypes = {
+    id:PropTypes.string.isRequired,
+    shelf:PropTypes.string.isRequired,
+    handleBookChange:PropTypes.func.isRequired,
+    bookName:PropTypes.string.isRequired,
+    bookAuthor:PropTypes.array.isRequired,
+    bookImg:PropTypes.string.isRequired,
+    avgRate:PropTypes.number,
+}
+
 export default BookCard;

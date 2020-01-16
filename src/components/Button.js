@@ -56,4 +56,9 @@ class Button extends Component {
     }
 }
 
+Button.propTypes = {
+    shelf:PropTypes.string.isRequired,
+    handleButtonChoice:PropTypes.func.isRequired,
+}
+
 export default Button;

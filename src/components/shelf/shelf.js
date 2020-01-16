@@ -123,7 +123,11 @@ class Shelf extends Component {
                 <div className="shelf-top">
                     <SectionControl sectionName={this.props.shelfName} numOfbook={this.props.numOfBooks}/>
                     <div className="shelf-button">
-                        <ShelfButton catagory={this.state.catagory} catagories={this.shelfCatagories()} handleButtonChoice={this.handleCatagoryChange} />
+                        <ShelfButton 
+                            catagory={this.state.catagory} 
+                            catagories={this.shelfCatagories()} 
+                            handleButtonChoice={this.handleCatagoryChange} 
+                        />
                     </div>
                 </div>
 
@@ -149,6 +153,13 @@ class Shelf extends Component {
             </div>
         )
     }
+}
+
+Shelf.propTypes = {
+    books:PropTypes.array.isRequired,
+    updateBookShelf:PropTypes.func.isRequired,
+    shelfName:PropTypes.string.isRequired,
+    numOfBooks:PropTypes.number.isRequired,
 }
 
 export default Shelf;
