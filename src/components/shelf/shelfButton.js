@@ -34,6 +34,10 @@ class ShelfButton extends Component {
     componentDidMount(){
         document.addEventListener('click', this.handleDropDownMenues);
     }
+
+    componentWillUnmount(){
+        document.removeEventListener('click', this.handleDropDownMenues);
+    }
     
 
     render(){

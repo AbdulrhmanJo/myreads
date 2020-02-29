@@ -8,7 +8,6 @@ $bp-sm: 35em;
     &-container{
         padding: 6rem 6rem;
         background-image: linear-gradient(to bottom, #e9defa 0%, #ffffff 100%);
-
         @media only screen and (max-width: $bp-large) {
             background-image: none;
             background-color:  white; 
@@ -25,9 +24,6 @@ $bp-sm: 35em;
 
 
 .shelf-top{
-
-    
-
     flex: 1;
     padding-left: 1rem;
     display: flex;
@@ -35,11 +31,9 @@ $bp-sm: 35em;
 }
 
 .shelf-dropdown {
-  
     &-button {
       @media only screen and (max-width: $bp-sm) {
         width: 14rem;
-
       }
 
       width: 18rem;

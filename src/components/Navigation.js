@@ -14,15 +14,28 @@ class Navigation extends Component {
     }
     toggleMenuIcon = () =>{
         const sidenav = document.querySelector(".sidenav");
-        if(sidenav.classList.contains('show')){
-            sidenav.style.display = 'none';
-            sidenav.classList.remove('show');
-        }else{
-            sidenav.style.display = 'flex';
-            sidenav.classList.add('show');
-        }
+        sidenav.classList.toggle('showMenu')
+    }
 
-        
+    handleMenue = () => {
+        window.onclick = function(event) {
+            if (!event.target.matches('.menuIcon')) {
+                console.log(event.target.classList);
+                
+                var myDropdown = document.querySelector(".sidenav");
+                  if (myDropdown.classList.contains('showMenu')) {
+                    myDropdown.classList.remove('showMenu');
+                  }
+                }
+        }
+    }
+
+    componentDidMount(){
+        document.addEventListener('click', this.handleMenue);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener('click', this.handleMenue);
     }
 
     render(){
